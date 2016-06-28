@@ -26,17 +26,18 @@ $(function() {
         it('URL defined and not empty', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.url).toBeDefined();
-                expect(feed.url).not.toEqual("");
+                expect(feed.url).not.toEqual('');
             });
         });
 
         /* Test loops through each feed in the allFeeds object 
          * and ensures it has a name defined and that the name is not empty.
          */
-        it('URL defined and not empty', function() {
+        it('Name defined and not empty', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.name).toBeDefined();
                 expect(feed.name).not.toBeGreaterThan(0);
+                expect(feed.url).not.toEqual('');
             });
         });
     });
