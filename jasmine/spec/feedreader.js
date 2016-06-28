@@ -55,10 +55,10 @@ $(function() {
         it('Menu changes visibility when the menu icon is clicked', function() {
             //display
             $('.menu-icon-link').click();
-            expect($('body').hasClass('menu-hidden')).toBe(false);
+            expect($('body').hasClass('menu-hidden')).toBeFalsy();
             //hidden
             $('.menu-icon-link').click();
-            expect($('body').hasClass('menu-hidden')).toBe(true);
+            expect($('body').hasClass('menu-hidden')).toBeTruthy();
         });
     });
 
