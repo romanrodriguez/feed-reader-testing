@@ -14,11 +14,12 @@ Whether you work in an organization that uses test-driven development or in an o
 The objective here was to leave the application with a robust set of tests that ensure the correct functioning of the feed reader application.
 
 
-## Usage - How to check out the project
+## Usage - How to check this project out
 
-Download the project to your local machine and open `index.html` in your browser. Jasmine will run the tests automatically and, if successful, it will display the Feed Reader application. Otherwise, it will hint to bugs in the program. __All the tests should pass__. 
+Download the project to your local machine and open `index.html` in your browser. Jasmine will run the tests automatically and, if successful, it will display the Feed Reader application. Otherwise, it will hint to bugs in the program.
+__All the tests should pass__. 
 
-# Tests included:
+## Tests included:
 
 1. Test makes sure that allFeeds variable has been defined and it is not empty.
 2. Test loops through each feed and determines if the URL is defined and is not empty.
