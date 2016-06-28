@@ -1,7 +1,7 @@
 /* feedreader.js
  *
  * This is the spec file that Jasmine will read and contains
- * all of the tests that will be run against your application.
+ * all of the tests that will be run against the application.
  */
 
 /* We're placing all of our tests within the $() function,
@@ -9,9 +9,8 @@
  * to ensure they don't run until the DOM is ready.
  */
 $(function() {
-    /* This is our first test suite - a test suite just contains
-    * a related set of tests. This suite is all about the RSS
-    * feeds definitions, the allFeeds variable in our application.
+    /* This suite is all about the RSS feeds definitions, 
+    * the allFeeds variable in our application.
     */
     describe('RSS Feeds', function() {
         /* Tests to make sure that the allFeeds variable 
@@ -22,8 +21,8 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
-        /* Test that loops through each feed in the allFeeds object
-         *  and ensures it has a URL defined and that the URL is not empty.
+        /* Test loops through each feed in the allFeeds object
+         * and ensures it has a URL defined and that the URL is not empty.
          */
         it('URL defined and not empty', function() {
             allFeeds.forEach(function(feed) {
@@ -43,19 +42,24 @@ $(function() {
         });
     });
 
-    /* TODO: Write a new test suite named "The menu" */
+    /* New test suite named "The menu" */
     describe('The menu', function() {
-        /* TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
-         * the CSS to determine how we're performing the
-         * hiding/showing of the menu element.
-         */
-
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
+        /* Test that ensures the menu element is hidden by default. */
+        it('Menu element is hidden by default', function() {
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
+         /* Test that ensures the menu changes visibility when the menu icon
+          *  is clicked. This test should have two expectations:
+          *  does the menu display when clicked and does it hide when clicked again.
           */
+        it('Menu changes visibility when the menu icon is clicked', function() {
+            //display
+            $('.menu-icon-link').click();
+            expect($('body').hasClass('menu-hidden')).toBe(false);
+            //hidden
+            $('.menu-icon-link').click();
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
     });
 
     /* TODO: Write a new test suite named "Initial Entries" */
