@@ -41,9 +41,9 @@ $(function() {
         });
     });
 
-    /* New test suite named "The menu" */
+    // New test suite named "The menu"
     describe('The menu', function() {
-        /* Test that ensures the menu element is hidden by default. */
+        // Test that ensures the menu element is hidden by default.
         it('Menu element is hidden by default', function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
         });
@@ -61,7 +61,7 @@ $(function() {
         });
     });
 
-    /* New test suite named "Initial Entries" */
+    // New test suite named "Initial Entries"
     describe('Initial Entries', function() {
         /* Test that ensures when the loadFeed function is called
          * and completes its work, there is at least a single .entry element
@@ -80,7 +80,7 @@ $(function() {
         });
     });
 
-    /* New test suite named "New Feed Selection" */
+    // New test suite named "New Feed Selection"
     describe('New Feed Selection', function() {
         var $feedOne, $feedTwo;
         /* Test that ensures when a new feed is loaded
