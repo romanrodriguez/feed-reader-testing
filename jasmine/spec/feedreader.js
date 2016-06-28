@@ -82,21 +82,24 @@ $(function() {
 
     // New test suite named "New Feed Selection"
     describe('New Feed Selection', function() {
-        var $feedOne, $feedTwo;
+        var $feedOne;
         /* Test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * loadFeed() is asynchronous.
          */
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                $feedOne = $('.feed').text();
+
+            loadFeed(2, function() {
+                $feedOne = $('.feed .entry').html();
                 done();
             });
         });
 
-        it('Feed content should change after loading.', function(done) {
-            loadFeed(1, function() {
-                $feedTwo = $('.feed').text();
+        it('Feed content should change after loading', function(done) {
+            var $feedTwo;
+
+            loadFeed(0, function() {
+                $feedTwo = $('.feed .entry').html();
                 expect($feedTwo).not.toEqual($feedOne);
                 done();
             });
