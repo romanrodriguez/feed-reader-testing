@@ -71,9 +71,7 @@ $(function() {
          * Jasmine's beforeEach and asynchronous done() function.
          */
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
-            });
+            loadFeed(0, done);
         });
 
         it('Function is called and at least one entry in feed reader', function() {
