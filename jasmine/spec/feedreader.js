@@ -3,15 +3,14 @@
  * This is the spec file that Jasmine will read and contains
  * all of the tests that will be run against the application.
  */
-
 /* We're placing all of our tests within the $() function,
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
 $(function() {
     /* This suite is all about the RSS feeds definitions, 
-    * the allFeeds variable in our application.
-    */
+     * the allFeeds variable in our application.
+     */
     describe('RSS Feeds', function() {
         /* Tests to make sure that the allFeeds variable 
          * has been defined and that it is not empty.
@@ -48,10 +47,10 @@ $(function() {
         it('Menu element is hidden by default', function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
         });
-         /* Test that ensures the menu changes visibility when the menu icon
-          *  is clicked. This test should have two expectations:
-          *  does the menu display when clicked and does it hide when clicked again.
-          */
+        /* Test that ensures the menu changes visibility when the menu icon
+         *  is clicked. This test should have two expectations:
+         *  does the menu display when clicked and does it hide when clicked again.
+         */
         it('Menu changes visibility when the menu icon is clicked', function() {
             //display
             $('.menu-icon-link').click();
@@ -83,9 +82,25 @@ $(function() {
 
     /* New test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
-        /* TODO: Write a test that ensures when a new feed is loaded
+        var $feedOne, $feedTwo;
+        /* Test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
+         * loadFeed() is asynchronous.
          */
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                $feedOne = $('.feed').text();
+                done();
+            });
+        });
+
+        it('Feed content should change after loading.', function(done) {
+            loadFeed(1, function() {
+                $feedTwo = $('.feed').text();
+                expect($feedTwo).not.toEqual($feedOne);
+                done();
+            });
+        });
     });
+
 }());
